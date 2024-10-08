@@ -1,6 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Cards } from "../../data/Cards";
+import gidro from "../../assets/img/largegid.svg";
+import heart from "../../assets/img/heart.svg";
+import line from "../../assets/img/line.svg";
+
 export const HomeDetail = () => {
   const [data, setData] = React.useState({});
   const { id } = useParams();
@@ -13,65 +17,70 @@ export const HomeDetail = () => {
   }, []);
   return (
     <>
-      {/* {data && (
-        <div className="container">
-          <div className={style.block}>
-            <div>
-              <img src={data.img} alt="#" />
+      {data && (
+        <div className="container ">
+          <div className="mt-[90px] flex gap-5">
+            <div className="cursor-pointer">
+              <img src={gidro} alt="#" />
             </div>
-            <div className={style.content}>
-              <div className={style.TitleBlock}>
-                <div>
-                  <h2 className={style.title}>{data.title}</h2>
-                  <p className={style.ganre}>{data.text}</p>
+            <div className="w-[750px]">
+              <h1 className="font-[700] text-[36px] leading-[130%] text-[#070c11] mb-[30px]">
+                {data.title}
+              </h1>
+              <div className="border-[2px] border-[#eaeaf0] pt-[30px] pr-[30px] pb-[30px] pl-[30px] rounded-[10px] mb-[30px]">
+                <div className="flex justify-between mb-5">
+                  <div>
+                    <img src={data.star} alt="#" />
+                  </div>
+                  <div className="flex gap-[10px]">
+                    <img src={heart} alt="#" />
+                    <img src={line} alt="#" />
+                  </div>
                 </div>
-                <div className={style.imgs}>
-                  <img src={data.listening} alt="#" />
-                  <img src={star4} alt="#" />
-                  <img src={comments} alt="#" />
-                </div>
-              </div>
-              <p className={style.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.{" "}
-              </p>
-              <div className={style.miniContent}>
-                <div>
-                  <h3 className={style.miniTitle}>Муаллиф</h3>
-                  <p className={style.miniText}>Kevin Smiley</p>
-                </div>
-                <div>
-                  <h3 className={style.miniTitle}>Нашриёт</h3>
-                  <p className={style.miniText}>Wepress Inc.</p>
-                </div>
-                <div>
-                  <h3 className={style.miniTitle}>Йил</h3>
-                  <p className={style.miniText}>1999</p>
+                <div className="flex justify-between">
+                  <div>
+                    <div className="flex gap-2 items-center">
+                      <p className="font-[700] leading-[130%] text-[16px] line-through text-[#838688]">
+                        {data.Pprice} ₽
+                      </p>
+                      <img src={data.discount} alt="#" />
+                    </div>
+                    <p className="font-[700] text-[32px] leading-[130%] text-[#070c11]">
+                      {data.Cprice} ₽
+                    </p>
+                  </div>
+                  <div className="flex gap-[10px]">
+                    <button className="font-[700] text-[16px] leading-[130%] text-[#fff] py-[14px] px-[75px] bg-[#4878a6] border-[2px] cursor-pointer border-[#4878a6]">
+                      В корзину
+                    </button>
+                    <button className="font-[700] cursor-pointer text-[16px] leading-[130%] text-[#4878a6] py-[14px] px-[54px] border-[2px] border-[#4878a6]">
+                      Купить в 1 клик
+                    </button>
+                  </div>
                 </div>
               </div>
-              <hr className="dottedhr" />
+              <div className="flex justify-between">
+                <div className="w-[365px]">
+                  <h3 className="font-[700] text-[16px] leading-[130%] text-[#070c11] mb-[10px]">
+                    Доставка
+                  </h3>
+                  <p className="font-[500] text-[16px] leading-[120%] text-[#070c11]">
+                    Доставим по Санкт-Петербургу в течение 2 часов и бесплатно.
+                    Стоимость доставки в другие города уточняйте у менеджера.
+                  </p>
+                </div>
+                <div className="w-[365px]">
+                  <h3 className="font-[700] text-[16px] leading-[130%] text-[#070c11] mb-[10px]">
+                    Оплата
+                  </h3>
+                  <p className="font-[500] text-[16px] leading-[120%] text-[#070c11]">
+                    Принимаем к оплате как наличный, так и безналичный расчёт.
+                    Возможна оплата электронными кошельками.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      )} */}
-      {data && (
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            distinctio sunt impedit eum perferendis aliquam provident nemo,
-            officia ratione illo eius dicta recusandae debitis totam ducimus
-            fugit neque mollitia autem?
-          </p>
-          <h1>{data.title}</h1>
         </div>
       )}
     </>
