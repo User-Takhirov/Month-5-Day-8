@@ -10,7 +10,7 @@ export const HeroLinks = () => {
             <div className="w-[307px] bg-[#edf2f6] flex flex-col py-[8px] rounded-b-[8px] rounded-bl-[8px]">
               {Catalog.map((item) => (
                 <div
-                  className="flex py-[8px] items-center gap-[10px] pl-[18px]"
+                  className="flex py-[8px] items-center gap-[10px] pl-[18px] hover:bg-[#dae4ed] cursor-pointer"
                   key={item.id}
                 >
                   <img src={item.img} alt="#" />
